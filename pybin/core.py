@@ -85,7 +85,7 @@ else:
 
             # PATH is likely already defined here but we'll
             # simply redefine it to make our lives easy.
-            lines.append('PATH="{}{}$PATH"\n'.format(user_bin_path, os.pathsep))
+            lines.append('\nPATH="{}{}$PATH"\n'.format(user_bin_path, os.pathsep))
             with open(user_profile, 'w') as f:
                 f.writelines(lines)
 
@@ -96,7 +96,7 @@ else:
             else:
                 lines = []
 
-            lines.append('export PATH="{}{}$PATH"\n'.format(user_bin_path, os.pathsep))
+            lines.append('\nexport PATH="{}{}$PATH"\n'.format(user_bin_path, os.pathsep))
             with open(bashrc, 'w') as f:
                 f.writelines(lines)
 
@@ -107,7 +107,7 @@ else:
             else:
                 lines = []
 
-            lines.append('export PATH="{}{}$PATH"\n'.format(user_bin_path, os.pathsep))
+            lines.append('\nexport PATH="{}{}$PATH"\n'.format(user_bin_path, os.pathsep))
             with open(bash_profile, 'w') as f:
                 f.writelines(lines)
         except (OSError, PermissionError):
